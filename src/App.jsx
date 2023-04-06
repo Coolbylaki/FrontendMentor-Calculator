@@ -3,10 +3,10 @@ import Header from "./Components/Header/Header";
 
 function App() {
 	return (
-		<div className="bg-T1-mainBg h-screen">
+		<>
 			<Header />
 			<Footer />
-		</div>
+		</>
 	);
 }
 
