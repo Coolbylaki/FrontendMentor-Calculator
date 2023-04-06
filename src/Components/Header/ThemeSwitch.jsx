@@ -4,7 +4,7 @@ import classes from "./ThemeSwitch.module.css";
 const ThemeSwitch = (props) => {
 	const ballRef = useRef();
 
-	function onChangeThemeHandler(e) {
+	function changeThemeHandler(e) {
 		const theme = e.target.value;
 
 		if (theme === "theme2") {
@@ -28,7 +28,7 @@ const ThemeSwitch = (props) => {
 						id="theme1"
 						defaultChecked
 						className="h-full w-[30px] opacity-0 block cursor-pointer"
-						onChange={onChangeThemeHandler}
+						onChange={changeThemeHandler}
 					/>
 				</div>
 				<div className="w-[30%] relative text-center">
@@ -39,7 +39,7 @@ const ThemeSwitch = (props) => {
 						value="theme2"
 						id="theme2"
 						className="mx-auto h-full w-[30px] opacity-0 block cursor-pointer"
-						onChange={onChangeThemeHandler}
+						onChange={changeThemeHandler}
 					/>
 				</div>
 				<div className="w-[30%] relative text-right right-2">
@@ -50,7 +50,7 @@ const ThemeSwitch = (props) => {
 						value="theme3"
 						id="theme3"
 						className="ml-auto h-full w-[30px] opacity-0 block cursor-pointer"
-						onChange={onChangeThemeHandler}
+						onChange={changeThemeHandler}
 					/>
 				</div>
 				<div
