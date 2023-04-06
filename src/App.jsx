@@ -1,10 +1,10 @@
 import Footer from "./Components/Footer";
-import ThemeSwift from "./Components/Theme/ThemeSwitch";
+import Header from "./Components/Header/Header";
 
 function App() {
 	return (
 		<div className="bg-T1-mainBg h-screen">
-			<ThemeSwift />
+			<Header />
 			<Footer />
 		</div>
 	);
