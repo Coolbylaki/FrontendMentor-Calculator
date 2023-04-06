@@ -1,0 +1,4 @@
+.left-calc {
+	--i: 5;
+	left: calc(var(--i) * 1px);
+}

@@ -45,6 +45,9 @@ export default {
 					allKeySh: "hsl(290, 70%, 36%)",
 				},
 			},
+			fontSize: {
+				calc: "2rem",
+			},
 		},
 	},
 	plugins: [],
