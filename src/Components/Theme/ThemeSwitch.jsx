@@ -5,7 +5,7 @@ const ThemeSwitch = (props) => {
 		<header className="flex justify-between p-5">
 			<h1 className="text-white text-calc">calc</h1>
 			<div className="flex items-center">
-				<div className="bg-T1-toggleBg h-[1.5rem] w-[75px] rounded-[50rem] relative flex justify-between">
+				<div className="bg-T1-toggleBg h-[1.5rem] w-[75px] rounded-[50rem] relative flex justify-center">
 					<div className="w-[30%] relative">
 						<label htmlFor="theme1" className="w-full absolute bottom-[100%] left-0 text-xs cursor-pointer text-white">
 							1
