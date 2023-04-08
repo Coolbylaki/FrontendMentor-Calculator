@@ -16,10 +16,15 @@ export default {
 				togKey: "var(--togKey)",
 				togKeySh: "var(--togKeySh)",
 				allKey: "var(--allKey)",
-				allKeySh: "var(--allKey)",
+				allKeySh: "var(--allKeySh)",
 			},
 			fontSize: {
 				calc: "2rem",
+			},
+			boxShadow: {
+				keyShadow: "inset 0 -0.15em var(--allKeySh)",
+				delResShadow: "inset 0 -0.25em var(--keySh)",
+				equalShadow: "inset 0 -0.15em var(--togKeySh)",
 			},
 		},
 	},
