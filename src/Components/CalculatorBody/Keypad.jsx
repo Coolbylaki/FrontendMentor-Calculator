@@ -4,9 +4,10 @@ const Keypad = (props) => {
 	let keyClasses = "text-text bg-allKey py-2 rounded text-calc shadow-keyShadow";
 	let equalKey = props.theme === "theme-neon" ? "text-textDark" : "text-white";
 
-	if (props.theme === "theme-neon" && props.theme) {
+	if (props.theme === "theme-neon" || props.theme === "theme-light") {
 		keyClasses = "text-mainText bg-allKey py-2 rounded text-calc shadow-keyShadow";
 	}
+
 	return (
 		<section className="bg-keypadBg p-6 rounded-lg mt-5 grid grid-cols-4 gap-3 md:gap-5">
 			<Button className={`${keyClasses} md:rounded-lg`}>7</Button>
