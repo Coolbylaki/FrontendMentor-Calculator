@@ -11,20 +11,20 @@ const ThemeSwitch = (props) => {
 			ballRef.current.style.setProperty("--i", "5");
 			document.getElementById("root").classList.remove("theme-light");
 			document.getElementById("root").classList.remove("theme-neon");
-
 			document.getElementById("root").classList.add("theme-dark");
+			props.onChangeTheme("theme-dark");
 		} else if (theme === "theme-light") {
 			ballRef.current.style.setProperty("--i", "30");
 			document.getElementById("root").classList.remove("theme-neon");
 			document.getElementById("root").classList.remove("theme-dark");
-
 			document.getElementById("root").classList.add("theme-light");
+			props.onChangeTheme("theme-light");
 		} else {
 			ballRef.current.style.setProperty("--i", "55");
 			document.getElementById("root").classList.remove("theme-dark");
 			document.getElementById("root").classList.remove("theme-light");
-
 			document.getElementById("root").classList.add("theme-neon");
+			props.onChangeTheme("theme-neon");
 		}
 	}
 
