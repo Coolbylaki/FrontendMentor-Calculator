@@ -13,12 +13,12 @@ function App() {
 	};
 
 	return (
-		<>
+		<main className="max-w-[500px]">
 			<Header onChangeTheme={onChangeTheme} />
 			<Footer />
 			<Screen />
 			<Keypad theme={theme} />
-		</>
+		</main>
 	);
 }
 
