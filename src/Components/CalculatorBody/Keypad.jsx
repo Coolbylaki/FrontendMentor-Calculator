@@ -1,6 +1,10 @@
+import { useContext } from "react";
+import CalcContext from "../../store/calc-context";
 import Button from "../Button";
 
 const Keypad = (props) => {
+	const ctx = useContext(CalcContext);
+
 	let keyClasses = "text-text bg-allKey py-2 rounded text-calc shadow-keyShadow";
 	let equalKey = props.theme === "theme-neon" ? "text-textDark" : "text-white";
 

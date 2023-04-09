@@ -36,10 +36,12 @@ const CalcProvider = (props) => {
 	const calcContext = {
 		total: calcState.total,
 		string: calcState.totalString,
-		reset: reset,
-		delete: del,
-		calculate: calculator,
+		reset: calcState.reset,
+		delete: calcState.del,
+		calculate: calcState.calculator,
 	};
 
 	return <CalcContext.Provider value={calcContext}>{props.children}</CalcContext.Provider>;
 };
+
+export default CalcProvider;
