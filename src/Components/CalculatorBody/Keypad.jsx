@@ -5,11 +5,11 @@ import Button from "../Button";
 const Keypad = (props) => {
 	const ctx = useContext(CalcContext);
 
-	let keyClasses = "text-text bg-allKey py-2 rounded text-calc shadow-keyShadow";
+	let keyClasses = "text-text bg-allKey py-2 rounded text-calc shadow-keyShadow hover:opacity-80";
 	let equalKey = props.theme === "theme-neon" ? "text-textDark" : "text-white";
 
 	if (props.theme === "theme-neon" || props.theme === "theme-light") {
-		keyClasses = "text-mainText bg-allKey py-2 rounded text-calc shadow-keyShadow";
+		keyClasses = "text-mainText bg-allKey py-2 rounded text-calc shadow-keyShadow hover:opacity-80";
 	}
 
 	const handleButtonClick = (event) => {
@@ -45,7 +45,7 @@ const Keypad = (props) => {
 				9
 			</Button>
 			<Button
-				className="text-white bg-keyBg py-2 rounded text-xl shadow-delResShadow md:rounded-lg"
+				className="text-white bg-keyBg py-2 rounded text-xl shadow-delResShadow md:rounded-lg hover:opacity-80"
 				onClick={handleDeleteClick}>
 				DEL
 			</Button>
@@ -78,11 +78,12 @@ const Keypad = (props) => {
 			<Button className={`${keyClasses} md:rounded-lg`}>/</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>x</Button>
 			<Button
-				className="text-white text-xl bg-keyBg py-2 rounded shadow-delResShadow col-span-2 md:rounded-lg"
+				className="text-white text-xl bg-keyBg py-2 rounded shadow-delResShadow col-span-2 md:rounded-lg hover:opacity-80"
 				onClick={handleResetClick}>
 				RESET
 			</Button>
-			<Button className={`${equalKey} bg-togKey py-2 rounded text-calc shadow-equalShadow col-span-2 md:rounded-lg`}>
+			<Button
+				className={`${equalKey} bg-togKey hover:opacity-80 py-2 rounded text-calc shadow-equalShadow col-span-2 md:rounded-lg `}>
 				=
 			</Button>
 		</section>
