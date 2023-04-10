@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CalcContext from "../../store/calc-context";
 
-const Screen = (props) => {
+const Screen = () => {
 	const ctx = useContext(CalcContext);
 
 	const leftSide = parseInt(ctx.total.split(".")).toLocaleString();

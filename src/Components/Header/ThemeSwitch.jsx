@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import classes from "./ThemeSwitch.module.css";
 
 const ThemeSwitch = (props) => {
@@ -6,6 +6,10 @@ const ThemeSwitch = (props) => {
 
 	function changeThemeHandler(e) {
 		const theme = e.target.value;
+
+		console.log("Hey", theme);
+
+		localStorage.setItem("theme", theme);
 
 		if (theme === "theme-dark") {
 			ballRef.current.style.setProperty("--i", "5");
@@ -28,6 +32,23 @@ const ThemeSwitch = (props) => {
 		}
 	}
 
+	useEffect(() => {
+		const theme = localStorage.getItem("theme");
+		if (theme) {
+			document.getElementById("root").classList.add(theme);
+			if (theme === "theme-dark") {
+				ballRef.current.style.setProperty("--i", "5");
+				props.onChangeTheme("theme-dark");
+			} else if (theme === "theme-light") {
+				ballRef.current.style.setProperty("--i", "30");
+				props.onChangeTheme("theme-light");
+			} else {
+				ballRef.current.style.setProperty("--i", "55");
+				props.onChangeTheme("theme-neon");
+			}
+		}
+	}, []);
+
 	return (
 		<div className="flex items-center">
 			<div className="bg-toggleBg h-[1.5rem] w-[75px] rounded-[50rem] relative flex justify-center">
@@ -38,7 +59,6 @@ const ThemeSwitch = (props) => {
 						name="theme"
 						value="theme-dark"
 						id="theme-dark"
-						defaultChecked
 						className="h-full w-[30px] opacity-0 block cursor-pointer"
 						onChange={changeThemeHandler}
 					/>

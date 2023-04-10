@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 
 const Header = (props) => {
