@@ -14,9 +14,14 @@ const Keypad = (props) => {
 
 	const handleButtonClick = (event) => {
 		const buttonValue = event.target.innerHTML;
-		ctx.addNum(buttonValue);
+		const regex = /\./;
 		if (buttonValue === ".") {
-			props.onDotClick();
+			if (!regex.test(ctx.total)) {
+				return ctx.addNum(buttonValue);
+			}
+		}
+		if (buttonValue !== ".") {
+			ctx.addNum(buttonValue);
 		}
 	};
 
