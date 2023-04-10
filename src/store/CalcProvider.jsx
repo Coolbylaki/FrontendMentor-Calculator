@@ -7,7 +7,16 @@ const defaultCalcState = {
 };
 
 const calcReducer = (state, action) => {
-	return defaultCalcState;
+	switch (action.type) {
+		case "DISPLAY":
+			const newNum = (state.totalString += action.payload).toLocaleString();
+			return {
+				...state,
+				totalString: newNum,
+			};
+		default:
+			return defaultCalcState;
+	}
 };
 
 const CalcProvider = (props) => {
@@ -33,12 +42,17 @@ const CalcProvider = (props) => {
 		}
 	};
 
+	const displayNum = (num) => {
+		dispatchCalcAction({ type: "DISPLAY", payload: num });
+	};
+
 	const calcContext = {
 		total: calcState.total,
 		string: calcState.totalString,
-		reset: calcState.reset,
-		delete: calcState.del,
-		calculate: calcState.calculator,
+		reset: resetHandler,
+		delete: deleteHandler,
+		calculate: calculator,
+		addNum: displayNum,
 	};
 
 	return <CalcContext.Provider value={calcContext}>{props.children}</CalcContext.Provider>;

@@ -4,9 +4,13 @@ import CalcContext from "../../store/calc-context";
 const Screen = (props) => {
 	const ctx = useContext(CalcContext);
 
+	console.log(ctx);
+
 	return (
 		<section className="bg-screenBg rounded-lg mt-4">
-			<h2 className="text-right text-mainText text-calc py-4 pr-5">{ctx.total.toLocaleString()}</h2>
+			<h2 className="text-right text-mainText text-calc py-4 pr-5">
+				{ctx.string ? parseInt(ctx.string).toLocaleString() : "0"}
+			</h2>
 		</section>
 	);
 };

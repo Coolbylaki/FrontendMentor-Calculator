@@ -12,22 +12,48 @@ const Keypad = (props) => {
 		keyClasses = "text-mainText bg-allKey py-2 rounded text-calc shadow-keyShadow";
 	}
 
+	const handleButtonClick = (event) => {
+		const buttonValue = event.target.innerHTML;
+		ctx.addNum(buttonValue);
+		console.log(`Button ${buttonValue} was clicked!`);
+	};
+
 	return (
 		<section className="bg-keypadBg p-6 rounded-lg mt-5 grid grid-cols-4 gap-3 md:gap-5">
-			<Button className={`${keyClasses} md:rounded-lg`}>7</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>8</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>9</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				7
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				8
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				9
+			</Button>
 			<Button className="text-white bg-keyBg py-2 rounded text-xl shadow-delResShadow md:rounded-lg">DEL</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>4</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>5</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>6</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				4
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				5
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				6
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>+</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>1</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>2</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>3</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				1
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				2
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				3
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>-</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>.</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>0</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				0
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>/</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>x</Button>
 			<Button className="text-white text-xl bg-keyBg py-2 rounded shadow-delResShadow col-span-2 md:rounded-lg">
