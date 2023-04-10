@@ -17,6 +17,10 @@ const Keypad = (props) => {
 		ctx.addNum(buttonValue);
 	};
 
+	const handleResetClick = () => {
+		ctx.reset();
+	};
+
 	return (
 		<section className="bg-keypadBg p-6 rounded-lg mt-5 grid grid-cols-4 gap-3 md:gap-5">
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
@@ -57,7 +61,9 @@ const Keypad = (props) => {
 			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>/</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>x</Button>
-			<Button className="text-white text-xl bg-keyBg py-2 rounded shadow-delResShadow col-span-2 md:rounded-lg">
+			<Button
+				className="text-white text-xl bg-keyBg py-2 rounded shadow-delResShadow col-span-2 md:rounded-lg"
+				onClick={handleResetClick}>
 				RESET
 			</Button>
 			<Button className={`${equalKey} bg-togKey py-2 rounded text-calc shadow-equalShadow col-span-2 md:rounded-lg`}>

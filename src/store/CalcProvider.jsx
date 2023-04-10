@@ -8,9 +8,13 @@ const defaultCalcState = {
 const calcReducer = (state, action) => {
 	switch (action.type) {
 		case "DISPLAY":
-			const newNum = (state.total += action.payload);
+			const newNum = state.total + action.payload;
 			return {
 				total: newNum,
+			};
+		case "RESET":
+			return {
+				total: "",
 			};
 		default:
 			return defaultCalcState;
