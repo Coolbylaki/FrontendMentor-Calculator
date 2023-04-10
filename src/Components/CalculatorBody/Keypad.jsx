@@ -15,7 +15,6 @@ const Keypad = (props) => {
 	const handleButtonClick = (event) => {
 		const buttonValue = event.target.innerHTML;
 		ctx.addNum(buttonValue);
-		console.log(`Button ${buttonValue} was clicked!`);
 	};
 
 	return (
@@ -50,7 +49,9 @@ const Keypad = (props) => {
 				3
 			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`}>-</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>.</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
+				.
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				0
 			</Button>

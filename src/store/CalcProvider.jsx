@@ -2,17 +2,15 @@ import { useReducer } from "react";
 import CalcContext from "./calc-context";
 
 const defaultCalcState = {
-	total: 0,
-	totalString: "",
+	total: "",
 };
 
 const calcReducer = (state, action) => {
 	switch (action.type) {
 		case "DISPLAY":
-			const newNum = (state.totalString += action.payload).toLocaleString();
+			const newNum = (state.total += action.payload);
 			return {
-				...state,
-				totalString: newNum,
+				total: newNum,
 			};
 		default:
 			return defaultCalcState;
@@ -48,7 +46,6 @@ const CalcProvider = (props) => {
 
 	const calcContext = {
 		total: calcState.total,
-		string: calcState.totalString,
 		reset: resetHandler,
 		delete: deleteHandler,
 		calculate: calculator,
