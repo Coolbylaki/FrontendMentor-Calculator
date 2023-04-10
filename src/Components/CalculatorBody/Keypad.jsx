@@ -15,10 +15,17 @@ const Keypad = (props) => {
 	const handleButtonClick = (event) => {
 		const buttonValue = event.target.innerHTML;
 		ctx.addNum(buttonValue);
+		if (buttonValue === ".") {
+			props.onDotClick();
+		}
 	};
 
 	const handleResetClick = () => {
 		ctx.reset();
+	};
+
+	const handleDeleteClick = () => {
+		ctx.delete();
 	};
 
 	return (
@@ -32,7 +39,11 @@ const Keypad = (props) => {
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				9
 			</Button>
-			<Button className="text-white bg-keyBg py-2 rounded text-xl shadow-delResShadow md:rounded-lg">DEL</Button>
+			<Button
+				className="text-white bg-keyBg py-2 rounded text-xl shadow-delResShadow md:rounded-lg"
+				onClick={handleDeleteClick}>
+				DEL
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				4
 			</Button>

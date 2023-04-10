@@ -16,6 +16,10 @@ const calcReducer = (state, action) => {
 			return {
 				total: "",
 			};
+		case "DELETE":
+			return {
+				total: state.total.slice(0, -1),
+			};
 		default:
 			return defaultCalcState;
 	}

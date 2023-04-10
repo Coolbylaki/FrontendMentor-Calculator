@@ -13,12 +13,16 @@ function App() {
 		console.log(theme);
 	};
 
+	const dotClickHandler = () => {
+		console.log("Dot clicked");
+	};
+
 	return (
 		<CalcProvider>
 			<main className="max-w-[500px] mx-auto flex flex-col justify-center h-screen p-5">
 				<Header onChangeTheme={onChangeTheme} />
-				<Screen />
-				<Keypad theme={theme} />
+				<Screen onDotClick={dotClickHandler} />
+				<Keypad theme={theme} onDotClick={dotClickHandler} />
 			</main>
 			<Footer />
 		</CalcProvider>

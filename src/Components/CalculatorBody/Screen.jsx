@@ -5,9 +5,9 @@ const Screen = () => {
 	const ctx = useContext(CalcContext);
 
 	const leftSide = parseInt(ctx.total.split(".")).toLocaleString();
-	const rightSide = ctx.total.split(".")[1] ? ctx.total.split(".")[1] : "";
+	const rightSide = ctx.total.match(/\..*/);
 
-	const formatNumber = rightSide ? leftSide + "." + rightSide : leftSide;
+	const formatNumber = rightSide ? leftSide.concat(rightSide) : leftSide;
 
 	console.log(ctx);
 
