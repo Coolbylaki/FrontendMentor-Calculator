@@ -47,7 +47,7 @@ Users should be able to:
 
 ### What I learned
 
-The only two new things I learned from this project were how to set up and manage multiple themes and how to save theme choice to local storage. The rest was used to reinforce my Tailwind and React before moving to advanced topics.
+The only two new things I learned from this project were how to set up and manage multiple themes and how to save theme choice to local storage. The rest was used to reinforce my Tailwind, React context and React reducer hooks before moving to advanced topics.
 
 ### Continued development
 
