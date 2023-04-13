@@ -1,8 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import CalcContext from "../../store/calc-context";
 import Button from "../Button";
 
 const Keypad = (props) => {
+	const [isTouched, setIsTouched] = useState(false);
 	const ctx = useContext(CalcContext);
 
 	let keyClasses = "text-text bg-allKey py-2 rounded text-calc shadow-keyShadow hover:opacity-80";
@@ -23,6 +24,7 @@ const Keypad = (props) => {
 		if (buttonValue !== ".") {
 			ctx.addNum(buttonValue);
 		}
+		setIsTouched(false);
 	};
 
 	const handleResetClick = () => {
@@ -34,19 +36,31 @@ const Keypad = (props) => {
 	};
 
 	const handleAddition = () => {
-		ctx.calculate("+");
+		if (!isTouched) {
+			ctx.calculate("+");
+			setIsTouched(true);
+		}
 	};
 
 	const handleSubstraction = () => {
-		ctx.calculate("-");
+		if (!isTouched) {
+			ctx.calculate("-");
+			setIsTouched(true);
+		}
 	};
 
 	const handleMultiplication = () => {
-		ctx.calculate("*");
+		if (!isTouched) {
+			ctx.calculate("*");
+			setIsTouched(true);
+		}
 	};
 
 	const handleDivision = () => {
-		ctx.calculate("/");
+		if (!isTouched) {
+			ctx.calculate("/");
+			setIsTouched(true);
+		}
 	};
 
 	const handleEqualButton = () => {
