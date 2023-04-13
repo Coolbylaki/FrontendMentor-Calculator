@@ -4,6 +4,7 @@ import Button from "../Button";
 
 const Keypad = (props) => {
 	const [isTouched, setIsTouched] = useState(false);
+	const [hasDot, setHasDot] = useState(false);
 	const ctx = useContext(CalcContext);
 
 	let keyClasses = "text-text bg-allKey py-2 rounded text-calc shadow-keyShadow hover:opacity-80";
@@ -15,9 +16,9 @@ const Keypad = (props) => {
 
 	const handleButtonClick = (event) => {
 		const buttonValue = event.target.innerHTML;
-		const regex = /\./;
 		if (buttonValue === ".") {
-			if (!regex.test(ctx.total)) {
+			if (!hasDot) {
+				setHasDot(true);
 				return ctx.addNum(buttonValue);
 			}
 		}
@@ -39,6 +40,7 @@ const Keypad = (props) => {
 		if (!isTouched) {
 			ctx.calculate("+");
 			setIsTouched(true);
+			setHasDot(false);
 		}
 	};
 
@@ -46,6 +48,7 @@ const Keypad = (props) => {
 		if (!isTouched) {
 			ctx.calculate("-");
 			setIsTouched(true);
+			setHasDot(false);
 		}
 	};
 
@@ -53,6 +56,7 @@ const Keypad = (props) => {
 		if (!isTouched) {
 			ctx.calculate("*");
 			setIsTouched(true);
+			setHasDot(false);
 		}
 	};
 
@@ -60,6 +64,7 @@ const Keypad = (props) => {
 		if (!isTouched) {
 			ctx.calculate("/");
 			setIsTouched(true);
+			setHasDot(false);
 		}
 	};
 
