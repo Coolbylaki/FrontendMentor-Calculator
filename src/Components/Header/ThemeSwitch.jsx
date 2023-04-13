@@ -7,8 +7,6 @@ const ThemeSwitch = (props) => {
 	function changeThemeHandler(e) {
 		const theme = e.target.value;
 
-		console.log("Hey", theme);
-
 		localStorage.setItem("theme", theme);
 
 		if (theme === "theme-dark") {
