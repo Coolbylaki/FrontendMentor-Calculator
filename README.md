@@ -1,6 +1,6 @@
 # Frontend Mentor - Calculator app
 
-This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: Work in progress
+- Solution URL: https://www.frontendmentor.io/solutions/react-and-tailwind-calculator-BiJlhHCcMv
 - Live Site URL: https://fm-react-calc.netlify.app/
 
 ## My process
