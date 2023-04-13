@@ -20,6 +20,22 @@ const calcReducer = (state, action) => {
 			return {
 				total: state.total.slice(0, -1),
 			};
+		case "ADD":
+			return {
+				total: state.total + " + ",
+			};
+		case "SUBSTRACT":
+			return {
+				total: state.total + " - ",
+			};
+		case "MULTIPLY":
+			return {
+				total: state.total + " * ",
+			};
+		case "DIVIDE":
+			return {
+				total: state.total + " / ",
+			};
 		default:
 			return defaultCalcState;
 	}
@@ -36,8 +52,8 @@ const CalcProvider = (props) => {
 		dispatchCalcAction({ type: "DELETE" });
 	};
 
-	const calculator = (method) => {
-		if (method === "x" && method) {
+	const calculator = (method, num) => {
+		if (method === "*" && method) {
 			dispatchCalcAction({ type: "MULTIPLY" });
 		} else if (method === "/" && method) {
 			dispatchCalcAction({ type: "DIVIDE" });

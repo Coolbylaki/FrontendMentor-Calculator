@@ -33,6 +33,22 @@ const Keypad = (props) => {
 		ctx.delete();
 	};
 
+	const handleAddition = () => {
+		ctx.calculate("+");
+	};
+
+	const handleSubstraction = () => {
+		ctx.calculate("-");
+	};
+
+	const handleMultiplication = () => {
+		ctx.calculate("*");
+	};
+
+	const handleDivision = () => {
+		ctx.calculate("/");
+	};
+
 	return (
 		<section className="bg-keypadBg p-6 rounded-lg mt-5 grid grid-cols-4 gap-3 md:gap-5">
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
@@ -58,7 +74,9 @@ const Keypad = (props) => {
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				6
 			</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>+</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleAddition}>
+				+
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				1
 			</Button>
@@ -68,15 +86,21 @@ const Keypad = (props) => {
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				3
 			</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>-</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleSubstraction}>
+				-
+			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				.
 			</Button>
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
 				0
 			</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>/</Button>
-			<Button className={`${keyClasses} md:rounded-lg`}>x</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleDivision}>
+				/
+			</Button>
+			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleMultiplication}>
+				*
+			</Button>
 			<Button
 				className="text-white text-xl bg-keyBg py-2 rounded shadow-delResShadow col-span-2 md:rounded-lg hover:opacity-80"
 				onClick={handleResetClick}>
