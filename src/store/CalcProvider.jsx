@@ -36,6 +36,10 @@ const calcReducer = (state, action) => {
 			return {
 				total: state.total + " / ",
 			};
+		case "EQUAL":
+			return {
+				total: eval(state.total).toString(),
+			};
 		default:
 			return defaultCalcState;
 	}
@@ -52,7 +56,7 @@ const CalcProvider = (props) => {
 		dispatchCalcAction({ type: "DELETE" });
 	};
 
-	const calculator = (method, num) => {
+	const calculator = (method) => {
 		if (method === "*" && method) {
 			dispatchCalcAction({ type: "MULTIPLY" });
 		} else if (method === "/" && method) {
@@ -68,12 +72,17 @@ const CalcProvider = (props) => {
 		dispatchCalcAction({ type: "DISPLAY", payload: num });
 	};
 
+	const equalHandler = () => {
+		dispatchCalcAction({ type: "EQUAL" });
+	};
+
 	const calcContext = {
 		total: calcState.total,
 		reset: resetHandler,
 		delete: deleteHandler,
 		calculate: calculator,
 		addNum: displayNum,
+		equals: equalHandler,
 	};
 
 	return <CalcContext.Provider value={calcContext}>{props.children}</CalcContext.Provider>;

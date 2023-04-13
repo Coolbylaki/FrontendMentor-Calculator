@@ -49,6 +49,10 @@ const Keypad = (props) => {
 		ctx.calculate("/");
 	};
 
+	const handleEqualButton = () => {
+		ctx.equals();
+	};
+
 	return (
 		<section className="bg-keypadBg p-6 rounded-lg mt-5 grid grid-cols-4 gap-3 md:gap-5">
 			<Button className={`${keyClasses} md:rounded-lg`} onClick={handleButtonClick}>
@@ -107,7 +111,8 @@ const Keypad = (props) => {
 				RESET
 			</Button>
 			<Button
-				className={`${equalKey} bg-togKey hover:opacity-80 py-2 rounded text-calc shadow-equalShadow col-span-2 md:rounded-lg `}>
+				className={`${equalKey} bg-togKey hover:opacity-80 py-2 rounded text-calc shadow-equalShadow col-span-2 md:rounded-lg `}
+				onClick={handleEqualButton}>
 				=
 			</Button>
 		</section>
